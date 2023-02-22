@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using farm_API.Models;
 
@@ -10,9 +11,11 @@ using farm_API.Models;
 namespace farm_API.Migrations
 {
     [DbContext(typeof(FinFarmerDbContext))]
-    partial class FinFarmerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230222085252_second-create")]
+    partial class secondcreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
