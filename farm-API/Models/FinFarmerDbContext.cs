@@ -10,5 +10,8 @@ namespace farm_API.Models
         }
 
         public DbSet<Farm> Farms { get; set; }
+        //public DbSet<UploadFile> Images { get; set; }
+
+        public DbSet<Worker> Workers { get; set; }
     }
 }
