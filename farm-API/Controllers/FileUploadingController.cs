@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using farm_API.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace farm_API.Controllers
@@ -14,8 +15,9 @@ namespace farm_API.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
         [HttpPost("[action]")]
-        public IActionResult UploadFiles(IFormFile file)
+        public IActionResult UploadFiles([FromForm]FileModel fileData)
         {
+            var file = fileData.file;
             string directoryPath = Path.Combine(_webHostEnvironment.ContentRootPath, "UploadedFiles");
             string filePath = Path.Combine(directoryPath, file.FileName);
             using(var stream = new FileStream(filePath, FileMode.Create))
